@@ -1,0 +1,24 @@
+# simple task_list
+
+task_list = []
+    task_list.append(tasks.Task("8765678","TESTER55",datetime.datetime.now(),
+                                datetime.datetime.now()+datetime.timedelta(hours=2)))
+    task_list.append(tasks.Task("refg878","SECOND", datetime.datetime.now(),
+                                datetime.datetime.now() + datetime.timedelta(hours=2)))
+
+
+#old arguments implementation
+try:
+    print ("CP1")
+    parser_args = argparse.ArgumentParser(description="TasX - Enter title", add_help=True) #parents=[tools.argparser])
+    parser_args.add_argument('-t', '--title', help='Event title', required=False)
+    parser_args.add_argument('-a', '--mode', help='Mode: tasklist/eventlist/add/feedback', required=False)
+    args = parser_args.parse_args()
+    if args.title:
+        title = args.title
+    if args.mode:
+        mode = args.mode
+    print ("CK2")
+except ImportError:
+    flags = None
+    print("CP3")
